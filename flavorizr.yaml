@@ -1,0 +1,66 @@
+flavors:
+  dev:
+    app:
+      name: "[Dev] Fitness Demo"
+    android:
+      applicationId: "com.example.fitness_demo.dev"
+      
+      
+    ios:
+      bundleId: "com.example.fitness_demo.dev"
+      
+  
+  stg:
+    app:
+      name: "[Stg] Fitness Demo"
+    android:
+      applicationId: "com.example.fitness_demo.stg"
+      
+      
+    ios:
+      bundleId: "com.example.fitness_demo.stg"
+      
+
+  prod:
+    app:
+      name: "Fitness Demo"
+    android:
+      applicationId: "com.example.fitness_demo"
+      
+      
+    ios:
+      bundleId: "com.example.fitness_demo"
+      
+
+instructions:
+  - assets:download
+  - assets:extract
+  - android:androidManifest
+  - android:buildGradle
+  - android:dummyAssets
+  - android:icons
+#  - flutter:flavors
+#  - flutter:app
+#  - flutter:pages
+#  - flutter:main
+#  - flutter:targets
+  - ios:podfile
+  - ios:xcconfig
+  - ios:buildTargets
+  - ios:schema
+  - ios:dummyAssets
+  - ios:icons
+  - ios:plist
+  - ios:launchScreen
+  - macos:podfile
+  - macos:xcconfig
+  - macos:configs
+  - macos:buildTargets
+  - macos:schema
+  - macos:dummyAssets
+  - macos:icons
+  - macos:plist
+  - google:firebase
+  - huawei:agconnect
+  - assets:clean
+  - ide:config
