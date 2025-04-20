@@ -103,17 +103,11 @@ class StatefulFilterGroup extends StatefulWidget {
   State<StatefulFilterGroup> createState() => _StatefulFilterGroupState();
 }
 
-class _StatefulFilterGroupState extends State<StatefulFilterGroup>
-    with AutomaticKeepAliveClientMixin {
+class _StatefulFilterGroupState extends State<StatefulFilterGroup> {
   final List<String> filters = [];
 
   @override
-  bool get wantKeepAlive => true;
-
-  @override
   Widget build(BuildContext context) {
-    super.build(context);
-
     return SizedBox(
       height: 50.0,
       width: double.infinity,

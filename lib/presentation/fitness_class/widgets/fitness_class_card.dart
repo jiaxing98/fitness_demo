@@ -52,6 +52,7 @@ class FitnessClassCard extends StatelessWidget {
               children: [
                 Text(
                   info.className,
+                  maxLines: 2,
                   style: TextStyle(fontSize: 18.0, fontWeight: FontWeight.w600),
                 ),
                 Text(info.classType),

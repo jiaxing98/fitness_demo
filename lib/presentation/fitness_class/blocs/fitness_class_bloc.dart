@@ -77,22 +77,25 @@ class FitnessClassBloc extends Bloc<FitnessClassEvent, FitnessClassState> {
 
   Future<void> _filterFitnessClass(
       FitnessClassFilterByClasses event, Emitter<FitnessClassState> emit) async {
-    // event.filters.isEmpty
-    //     ? emit(
-    //         FitnessClassFetchSuccess(
-    //           currentPage: state.currentPage,
-    //           fitnessClasses: state.fitnessClasses,
-    //           filteredFitnessClasses: state.fitnessClasses,
-    //         ),
-    //       )
-    //     : emit(
-    //         FitnessClassFetchSuccess(
-    //             currentPage: state.currentPage,
-    //             fitnessClasses: state.fitnessClasses,
-    //             filteredFitnessClasses: state.fitnessClasses
-    //                 .where((e) => event.filters.contains(e.classType))
-    //                 .toList()),
-    //       );
+    final a = state.fitnessClasses.where((e) => event.filters.contains(e.classType)).toList();
+    print('a: $a');
+
+    event.filters.isEmpty
+        ? emit(
+            FitnessClassFetchSuccess(
+              currentPage: state.currentPage,
+              fitnessClasses: state.fitnessClasses,
+              filteredFitnessClasses: state.fitnessClasses,
+            ),
+          )
+        : emit(
+            FitnessClassFetchSuccess(
+                currentPage: state.currentPage,
+                fitnessClasses: state.fitnessClasses,
+                filteredFitnessClasses: state.fitnessClasses
+                    .where((e) => event.filters.contains(e.classType))
+                    .toList()),
+          );
   }
 
   Future<void> _filterFitnessClassByQuery(
@@ -109,7 +112,7 @@ class FitnessClassBloc extends Bloc<FitnessClassEvent, FitnessClassState> {
       );
     }
 
-    final filtered = state.fitnessClasses
+    final filtered = state.filteredFitnessClasses
         .where((e) =>
             e.className.toLowerCase().contains(query) ||
             e.classType.toLowerCase().contains(query) ||

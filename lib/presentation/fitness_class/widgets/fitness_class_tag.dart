@@ -15,11 +15,16 @@ class FitnessClassTag extends StatefulWidget {
   State<FitnessClassTag> createState() => _FitnessClassTagState();
 }
 
-class _FitnessClassTagState extends State<FitnessClassTag> {
+class _FitnessClassTagState extends State<FitnessClassTag> with AutomaticKeepAliveClientMixin {
   bool isSelected = false;
 
   @override
+  bool get wantKeepAlive => true;
+
+  @override
   Widget build(BuildContext context) {
+    super.build(context);
+
     return GestureDetector(
       onTap: () {
         setState(() {
