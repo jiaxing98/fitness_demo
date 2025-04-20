@@ -36,6 +36,7 @@ instructions:
   - assets:download
   - assets:extract
   - android:androidManifest
+  - android:flavorizrGradle
   - android:buildGradle
   - android:dummyAssets
   - android:icons

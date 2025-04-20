@@ -1,0 +1,21 @@
+android {
+    flavorDimensions += "flavor-type"
+
+    productFlavors {
+        dev {
+            dimension "flavor-type"
+            applicationId "com.example.fitness_demo.dev"
+            resValue "string", "app_name", "[Dev] Fitness Demo"
+        }
+        stg {
+            dimension "flavor-type"
+            applicationId "com.example.fitness_demo.stg"
+            resValue "string", "app_name", "[Stg] Fitness Demo"
+        }
+        prod {
+            dimension "flavor-type"
+            applicationId "com.example.fitness_demo"
+            resValue "string", "app_name", "Fitness Demo"
+        }
+    }
+}
