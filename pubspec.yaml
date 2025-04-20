@@ -103,6 +103,7 @@ dependencies:
   # Drift is a reactive persistence library for Flutter and Dart, built on top of SQLite.
   # https://pub.dev/packages/drift
   drift: ^2.24.0
+  drift_flutter: ^0.2.4
 
   # This plugin provides a cross-platform (iOS, Android) API to request permissions and check their status.
   # https://pub.dev/packages/permission_handler
@@ -159,6 +160,10 @@ dependencies:
   # A performant library that makes it simple to add almost any kind of animated effect in Flutter.
   # https://pub.dev/packages/flutter_animate
   flutter_animate: ^4.5.2
+
+  # A flutter library to show images from the internet and keep them in the cache directory.
+  # https://pub.dev/packages/cached_network_image
+  cached_network_image: ^3.4.1
 
   # Simple, fast generation of RFC4122 and RFC9562 UUIDs.
   # https://pub.dev/packages/uuid

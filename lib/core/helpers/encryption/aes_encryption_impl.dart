@@ -1,5 +1,5 @@
-import 'package:fitness_demo/core/helpers/encryption/aes_encryption.dart';
 import 'package:encrypt/encrypt.dart';
+import 'package:fitness_demo/core/helpers/encryption/aes_encryption.dart';
 
 class AesEncryptionImpl extends AesEncryption {
   final Encrypter _encrypter;
@@ -14,7 +14,7 @@ class AesEncryptionImpl extends AesEncryption {
 
   @override
   String decrypt(String encryptedText) {
-    final encrypted = Encrypted.fromBase16(encryptedText);
+    final encrypted = Encrypted.fromBase64(encryptedText);
     return _encrypter.decrypt(encrypted, iv: _iv);
   }
 

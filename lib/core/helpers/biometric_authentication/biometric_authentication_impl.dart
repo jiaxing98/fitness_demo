@@ -1,14 +1,13 @@
 import 'dart:developer';
 
-import 'package:flutter/services.dart';
-import 'package:flutter/services.dart';
-import 'package:local_auth/local_auth.dart';
-import 'package:shared_preferences/shared_preferences.dart';
 import 'package:fitness_demo/core/extensions/string_extension.dart';
 import 'package:fitness_demo/core/helpers/biometric_authentication/biometric_authentication.dart';
 import 'package:fitness_demo/core/helpers/biometric_authentication/exception.dart';
 import 'package:fitness_demo/core/helpers/encryption/aes_encryption.dart';
 import 'package:fitness_demo/core/helpers/encryption/aes_encryption_impl.dart';
+import 'package:flutter/services.dart';
+import 'package:local_auth/local_auth.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class BiometricAuthenticationImpl extends BiometricAuthentication {
   final _biometricLoginEnabled = "key_biometric_login_enabled";
@@ -89,14 +88,14 @@ class BiometricAuthenticationImpl extends BiometricAuthentication {
   }
 
   @override
-  Future<void> enabledBiometricLogin(String password) async {
+  Future<void> enableBiometricLogin(String password) async {
     final encrypted = _aes.encrypt(password);
     await _sp.setString(_biometricLoginPassword, encrypted);
     await _sp.setBool(_biometricLoginEnabled, true);
   }
 
   @override
-  Future<void> disabledBiometricLogin() async {
+  Future<void> disableBiometricLogin() async {
     await _sp.setBool(_biometricLoginEnabled, false);
     await _sp.remove(_biometricLoginPassword);
   }
